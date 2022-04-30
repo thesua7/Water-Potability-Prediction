@@ -7,14 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WQP</title>
 </head>
-<h1>Model Deployment</h1>
+<h1>Check water is drinkable or not?</h1>
 <p>Linked html page</p>
-<form action="/sub" method="POST">
-    <input type="text" name="username" placeholder="Username">
-    <input type="submit">
+
+<body>
+<form action="/predict" method="POST">
+          <label for="pH">pH (typical range 0.0 - 14.0) </label>
+    	<input type="number" id="pH" step="any" name="ph" placeholder="pH" required="required" /> <br>
+          <label for="hardness"> Hardness (typical range 47 - 323 mg/L) </label>
+        <input type="number" step="any" id="hardness" name="Hardness" placeholder="Hardness" required="required" /><br>
+          <label for="solids">Solids (typical range 320 - 61227 ppm)</label>
+		<input type="number" step="any" id="solids" name="Solids" placeholder="Solids" required="required" /><br>
+          <label for="chloramines">Chloramines (typical range 0.35 - 13 ppm) </label>
+        <input type="number" step="any" id="chloramines" name="Chloramines" placeholder="Chloramines" required="required" /><br>
+          <label for="sulfate"> Sulfate (typical range 129 - 481 ppm)</label>
+        <input type="number" step="any" id="sulfate" name="Sulfate" placeholder="Sulfate" required="required" /><br>
+          <label for="conductivity"> Conductivity (typical range 181 - 753 μS/cm)</label>
+        <input type="number" step="any" id="conductivity" name="Conductivity" placeholder="Conductivity" required="required" /><br>
+          <label for="organic_carbon"> Organic Carbon (typical range 2 - 28 ppm)</label>
+        <input type="number" step="any" id="organic_carbon" name="Organic_carbon" placeholder="Organic Carbon" required="required" /><br>
+          <label for="trihalomethanes"> Trihalomethanes (typical range 0.50 - 124 μg/L) </label>
+        <input type="number" step="any" id="trihalomethanes" name="Trihalomethanes" placeholder="Trihalomethanes" required="required" /> <br>
+          <label for="turbidity"> Turbidity (typical range 1.45 - 6.74 NTU)</label>
+        <input type="number" step="any" id="turbidity" name="Turbidity" placeholder="Turbidity" required="required" /> <br>
+        <button type="submit" >Predict</button>
 
 </form>
-<body>
-
+<br>
+    <h2>Results: </h2>
+    <h1>   {{ final }} </h1>
 </body>
 </html>
