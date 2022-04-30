@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 
 def wq_prediction(final_features):
-    data=pd.read_csv(r'C:\Users\thesu\OneDrive\Documents\water_potability.csv')
+    data=pd.read_csv(r'Dataset\water_potability.csv')
     df = pd.DataFrame(data)
     data[data['Potability'] == 0][['ph', 'Sulfate', 'Trihalomethanes']].median()
     data[data['Potability'] == 1][['ph', 'Sulfate', 'Trihalomethanes']].median()
@@ -22,7 +22,7 @@ def wq_prediction(final_features):
     scaler = StandardScaler()
     scaler.fit(X_train)
     X_train = scaler.transform(X_train)
-    X_test = scaler.transform(X_test)
+
     rdf=RandomForestClassifier()
     rdf.fit(X_train,Y_train)
 
