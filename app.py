@@ -17,9 +17,9 @@ def test():
         prediction = pre.wq_prediction(final_features)
 
         if prediction == 1:
-            prediction_text = "Water is likely safe to drink"
+            prediction_text = "Water is likely safe to drink."
         else:
-            prediction_text = "Dont drink it"
+            prediction_text = "Don't drink it."
 
     return render_template('index.html',final=prediction_text)
 
